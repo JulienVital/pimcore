@@ -1,4 +1,8 @@
 body {
+    background-color: #f5f5f5;
+    font-family: 'Nunito Sans', sans-serif;
+    color: #343434;
+    font-weight: bold;
 }
 
 .todoList {
@@ -8,11 +12,25 @@ body {
     list-style: none;
     padding: 2rem;
     margin: 0 auto;
+    background-image: repeating-linear-gradient(180deg, #e6e6e6, #e6e6e6 1px, #fff 1px, #fff 30px)
 
 }
 
-h2 {
+h1, h2 {
+    margin: 0;
     text-align: center;
+    text-transform: uppercase;
+    color: #0a287c
+}
+h1{
+    border-bottom: 3px solid;
+    padding-bottom: 1rem;
+
+}
+
+h2{
+    border-top: 3px solid;
+    padding-top: 1rem;
 }
 
 

@@ -1,34 +1,41 @@
 {% extends 'layout.html.twig' %}
 
-{% set todoList = pimcore_relation("todoList").element %} 
+        {% set todoList = pimcore_relation("todoList").element %} 
 
-{% block title %}{{todoList.Title}}{% endblock %}
-{% block stylesheets %}
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-{% endblock %}
-{% block content %}
-    <H1>{{todoList.Title}}</H1>
-
-    <ul class="todoList">
-        {% if editmode %}
-            {{ pimcore_relation("todoList") }}
-        {% else %}
-            {% set taskNotCompleted = 0 %} 
-
-            {% for task in todoList.todoList|filter(task => task.isDone.data == false) %}
-                {% set taskNotCompleted = taskNotCompleted + 1 %}
-            {% endfor %}
-            
-            <H2>{{taskNotCompleted}} tâches en cours</H2>
-
-            {% for task in todoList.todoList %}
-                {% if task.isDone.data  %}
-                <li><input type='checkbox' checked disabled> <label>{{ task.task.data }}</label></li>
-                {% else %}
-                <li><input type='checkbox' disabled> <label>{{ task.task.data }}</label></li>
+            {% block title %}
+                {% if todoList.Title|default %}
+                    {{todoList.Title}}
                 {% endif %}
-            {% endfor %}
-        {% endif %}
-    </ul>
-{% endblock %}
+            {% endblock %}
+
+        {% block stylesheets %}
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+            <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+        {% endblock %}
+
+        {% block content %}
+            {% if editmode %}
+                {{ pimcore_relation("todoList") }}
+            {% else %}
+
+                <section class="todoList">
+                    {% set taskNotCompleted = 0 %} 
+                    <H1>{{todoList.Title}}</H1>
+                    <ul>
+                        {% for task in todoList.todoList %}
+                            {% if task.isDone.data  %}
+                            <li><input type='checkbox' checked disabled> <label>{{ task.task.data }}</label></li>
+                            {% else %}
+                            {% set taskNotCompleted = taskNotCompleted + 1 %}
+                            <li><input type='checkbox' disabled> <label>{{ task.task.data }}</label></li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                    <H2>{{taskNotCompleted}} tâches restantes sur {{ todoList.todoList | length}}</H2>
+                </section>
+            {% endif %}
+        {% endblock %}
+    
 
