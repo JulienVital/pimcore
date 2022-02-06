@@ -1,12 +1,25 @@
 {% extends 'layout.html.twig' %}
-{% block title %}TodoList{% endblock %}
-{% block content %}
-    <h1>{{ pimcore_input("headline", {"width": 540}) }}</h1>
-    
-    {% for i in pimcore_iterate_block(pimcore_block('contentblock')) %}
-        <h2>{{ pimcore_input('subline') }}</h2>
-        {{ pimcore_wysiwyg('content') }}
-    {% endfor %}
-{% endblock %}
 
+{% set todoList = pimcore_relation("todoList").element %} 
+
+{% block title %}{{todoList.Title}}{% endblock %}
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+{% endblock %}
+{% block content %}
+    
+<ul class="todoList">
+    {% if editmode %}
+        {{ pimcore_relation("todoList") }}
+    {% else %}
+        {% for task in todoList.todoList %}
+            {% if task.isDone.data  %}
+            <li><input type='checkbox' checked disabled> {{ task.task.data }}</li>
+            {% else %}
+            <li><input type='checkbox' disabled> {{ task.task.data }}</li>
+            {% endif %}
+        {% endfor %}
+    {% endif %}
+</ul>
+{% endblock %}
 
