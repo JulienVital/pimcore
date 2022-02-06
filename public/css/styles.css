@@ -1,0 +1,30 @@
+body {
+}
+
+.todoList {
+    background-color: aliceblue;
+    width: 90%;
+    max-width: 560px;
+    list-style: none;
+    padding: 2rem;
+    margin: 0 auto;
+
+}
+
+h2 {
+    text-align: center;
+}
+
+
+li {
+    margin: 0 auto 1rem;
+    display: flex;
+}
+
+li label {
+    border-bottom: solid 1px;
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 0.3rem;
+    padding-left: 0.3rem;
+}

@@ -7,19 +7,28 @@
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
 {% endblock %}
 {% block content %}
-    
-<ul class="todoList">
-    {% if editmode %}
-        {{ pimcore_relation("todoList") }}
-    {% else %}
-        {% for task in todoList.todoList %}
-            {% if task.isDone.data  %}
-            <li><input type='checkbox' checked disabled> {{ task.task.data }}</li>
-            {% else %}
-            <li><input type='checkbox' disabled> {{ task.task.data }}</li>
-            {% endif %}
-        {% endfor %}
-    {% endif %}
-</ul>
+    <H1>{{todoList.Title}}</H1>
+
+    <ul class="todoList">
+        {% if editmode %}
+            {{ pimcore_relation("todoList") }}
+        {% else %}
+            {% set taskNotCompleted = 0 %} 
+
+            {% for task in todoList.todoList|filter(task => task.isDone.data == false) %}
+                {% set taskNotCompleted = taskNotCompleted + 1 %}
+            {% endfor %}
+            
+            <H2>{{taskNotCompleted}} tâches en cours</H2>
+
+            {% for task in todoList.todoList %}
+                {% if task.isDone.data  %}
+                <li><input type='checkbox' checked disabled> <label>{{ task.task.data }}</label></li>
+                {% else %}
+                <li><input type='checkbox' disabled> <label>{{ task.task.data }}</label></li>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+    </ul>
 {% endblock %}
 
