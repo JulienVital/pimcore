@@ -1,0 +1,30 @@
+span {
+    color:red;
+}
+
+.sticker{
+
+        background-color: brown !important;
+        padding: 1rem;
+        transform: rotate(10deg);
+        position: fixed;
+        left: -10px;
+        top: 20px;
+}
+@media print {
+    p{
+        page-break-after: always;
+    }
+}
+
+@page{
+    @left-middle {
+        margin: 10pt 0 30pt 0;
+        border-top: .25pt solid #666;
+        content: "My book";
+        font-size: 9pt;
+        color: #333;
+    } 
+
+}
+

@@ -1,3 +1,5 @@
+.DS_Store
+mywork.c~
 # remove the following ignores for your project
 /config/pimcore/constants.php
 

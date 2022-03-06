@@ -1,0 +1,27 @@
+*{
+    margin:0;
+    padding:0
+}
+span {
+    color:red;
+}
+
+.sticker{
+        background-color: brown !important;
+        padding: 1rem;
+        width:20mm;
+        transform: rotate(90deg);
+        position: fixed;
+        left: -10mm;
+        top: 10mm;
+}
+
+    p{
+        page-break-after: always;
+    }
+
+@page {
+    size: A6;
+
+}
+

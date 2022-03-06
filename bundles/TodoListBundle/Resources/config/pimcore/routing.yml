@@ -1,0 +1,3 @@
+todo_list_homepage:
+    path:     /todo_list
+    defaults: { _controller: TodoListBundle\Controller\DefaultController:indexAction }
