@@ -1,19 +1,21 @@
 *{
     margin:0;
-    padding:0
+    padding:0;
+    -webkit-print-color-adjust: exact;
 }
 span {
-    color:red;
+    color: device-cmyk(0%, 98%, 17%, 37%);
 }
 
 .sticker{
-        background-color: brown !important;
-        padding: 1rem;
-        width:20mm;
-        transform: rotate(90deg);
-        position: fixed;
-        left: -10mm;
-        top: 10mm;
+    -webkit-print-color-adjust: exact;
+    background-color: cmyk(0%, 98%, 17%, 37%);
+    padding: 1rem;
+    width:20mm;
+    transform: rotate(90deg);
+    position: fixed;
+    left: -10mm;
+    top: 10mm;
 }
 
     p{
@@ -21,7 +23,21 @@ span {
     }
 
 @page {
-    size: A6;
+    size: A4;
 
 }
+
+table {
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: collapse;
+    border: 3px solid purple;
+  }
+  
+  th, td {
+    padding: 20px;
+    border: 1px solid #F0f;
+    background-color: aquamarine;
+    margin: 5px 0px;
+  }
 

@@ -6,12 +6,180 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <title>Document</title>
-    <style>{{ source('/web2print/css.css') }}</style>
+    <style>{{ source('/web2print/css.css') }}
+        body{
+
+        counter-reset: page;
+        }
+
+        @page{
+            counter-increment:  page;
+        }
+        p::after{
+
+            content: "p " counter(page)
+        }
+    
+    </style>
 </head>
 <body>
-    <div class="sticker">Test</div>
-    <img src="/var/assets/trac.jpg">
+    <!-- <div class="sticker">Test</div> -->
+    <img src="{{ asset ('trac.jpg') }}">
     <span> test</span>
     <p>Test    TestLorem ipsum dolor sit, amet consectetur adipisicing elit. Minus, eos iusto? Consectetur incidunt assumenda amet voluptatem ex expedita sunt sequi? Incidunt quas explicabo ipsam ratione a dolorem ea doloremque modi alias sint.</p>
-    </body>
+    <table>
+        <thead>
+            <tr><th colspan="3">heading</th></tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+        </tr>
+        <tr>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+        </tr>
+        <!-- 500 more rows -->
+        <tr>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+        </tr>
+                <tr>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+        </tr>
+                <tr>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+        </tr>
+                <tr>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+        </tr>
+                <tr>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+        </tr>
+                <tr>
+            <td>1</td>
+            <td>1</td>
+            <td>1</td>
+        </tr>
+                <tr>
+            <td>2</td>
+            <td>2</td>
+            <td>2</td>
+        </tr>
+                <tr>
+            <td>3</td>
+            <td>3</td>
+            <td>3</td>
+        </tr>
+                <tr>
+            <td>4</td>
+            <td>4</td>
+            <td>4</td>
+        </tr>
+                <tr>
+            <td>5</td>
+            <td>5</td>
+            <td>5</td>
+        </tr>
+                <tr>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+        </tr>
+                <tr>
+            <td>8</td>
+            <td>8</td>
+            <td>8</td>
+        </tr>
+                <tr>
+            <td>9</td>
+            <td>9</td>
+            <td>9</td>
+        </tr>
+                <tr>
+            <td>10</td>
+            <td>10</td>
+            <td>10</td>
+        </tr>
+                <tr>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+        </tr>
+                <tr>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+        </tr>
+                <tr>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+        </tr>
+                <tr>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+        </tr>
+                <tr>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+        </tr>
+                <tr>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+        </tr>
+                <tr>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+        </tr>
+                <tr>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+        </tr>
+                <tr>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+        </tr>
+                <tr>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+        </tr>
+                <tr>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+        </tr>
+                <tr>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+        </tr>
+                <tr>
+            <td>x</td>
+            <td>x</td>
+            <td>x</td>
+        </tr>
+        
+    </tbody>
+    </table>
+</body>
 </html>

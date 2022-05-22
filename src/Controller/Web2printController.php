@@ -9,8 +9,8 @@
  * Full copyright and license information is available in
  * LICENSE.md which is distributed with this source code.
  *
- *  @copyright  Copyright (c) Pimcore GmbH (http://www.pimcore.org)
- *  @license    http://www.pimcore.org/license     GPLv3 and PEL
+ * @copyright Copyright (c) Pimcore GmbH (http://www.pimcore.org)
+ * @license   http://www.pimcore.org/license     GPLv3 and PEL
  */
 
 namespace App\Controller;
@@ -24,7 +24,7 @@ class Web2printController extends FrontendController
 {
 
     /**
-     * @param Request $request
+     * @param  Request $request
      * @return Response
      */
     public function defaultAction(Request $request)
@@ -47,7 +47,7 @@ class Web2printController extends FrontendController
     }
 
     /**
-     * @param Request $request
+     * @param  Request $request
      * @return Response
      * @throws \Exception
      */

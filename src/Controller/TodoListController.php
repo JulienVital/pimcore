@@ -7,11 +7,12 @@ use Symfony\Component\HttpFoundation\Request;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 
 class TodoListController extends FrontendController
-{   /**
-    * @Template
-    * @param Request $request
-    * @return array
-    */
+{
+    /**
+     * @Template
+     * @param    Request $request
+     * @return   array
+     */
     public function defaultAction(Request $request)
     {
         return [];

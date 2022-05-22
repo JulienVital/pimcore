@@ -11,12 +11,19 @@
     "iio/libmergepdf": "^4.0",
     "pimcore/bundle-generator": "^1.0",
     "pimcore/pimcore": "^10.0",
+    "setasign/fpdi": "^2.3",
     "spiritix/php-chrome-html2pdf": "^1.6"
   },
   "require-dev": {
     "cache/integration-tests": "^0.17.0",
     "codeception/codeception": "^4.1.12",
-    "codeception/module-symfony": "^1"
+    "codeception/module-symfony": "^1",
+    "codedungeon/phpunit-result-printer": "^0.32.0",
+    "nelmio/alice": "^3.10",
+    "sempro/phpunit-pretty-print": "^1.4",
+    "squizlabs/php_codesniffer": "*",
+    "symfony/maker-bundle": "^1.42",
+    "symfony/phpunit-bridge": "*"
   },
   "suggest": {
     "pimcore/data-hub": "Universal data interface for GraphQL, CSV and other formats"
@@ -26,6 +33,11 @@
       "App\\": "src/",
       "Pimcore\\Model\\DataObject\\": "var/classes/DataObject",
       "TodoListBundle\\": "bundles/TodoListBundle"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+        "Tests\\": "TodoListBundle/Tests"
     }
   },
   "scripts": {

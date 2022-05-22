@@ -9,11 +9,12 @@ class TestProvider implements \Pimcore\Model\DataObject\ClassDefinition\PreviewG
     protected $productLinkGenerator;
 
     /**
-     * @param \Pimcore\Model\DataObject\Concrete $object
-     * @param array $params
+     * @param  \Pimcore\Model\DataObject\Concrete $object
+     * @param  array                              $params
      * @return string
      */
-    public function generatePreviewUrl(Concrete $object, array $params): string {
+    public function generatePreviewUrl(Concrete $object, array $params): string
+    {
         //dd($object);
         $additionalParams = [];
         return 'test/'.$object->getId();
@@ -24,7 +25,8 @@ class TestProvider implements \Pimcore\Model\DataObject\ClassDefinition\PreviewG
      *
      * @return array
      */
-    public function getPreviewConfig(Concrete $object): array {
+    public function getPreviewConfig(Concrete $object): array
+    {
 
         return [
             [

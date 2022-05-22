@@ -1,25 +1,22 @@
 <?php
 
 /**
-* Inheritance: yes
+* Inheritance: no
 * Variants: no
-* simple Todolist
 
 
 Fields Summary:
-- Title [input]
-- Todolist [block]
--- isDone [checkbox]
--- task [input]
+- name [input]
+- related_dummy [manyToOneRelation]
 */
 
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
-   'id' => '3',
-   'name' => 'Todolist',
-   'description' => 'simple Todolist',
+   'id' => '7',
+   'name' => 'Dummy',
+   'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1646776192,
+   'modificationDate' => 1652393141,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -31,9 +28,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'encryptedTables' => 
   array (
   ),
-   'allowInherit' => true,
+   'allowInherit' => false,
    'allowVariants' => false,
-   'showVariants' => true,
+   'showVariants' => false,
    'fieldDefinitions' => 
   array (
   ),
@@ -62,7 +59,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'border' => false,
          'name' => 'Layout',
          'type' => NULL,
-         'region' => 'center',
+         'region' => NULL,
          'title' => '',
          'width' => '',
          'height' => '',
@@ -82,13 +79,13 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'regex' => '',
              'unique' => false,
              'showCharCount' => false,
-             'name' => 'Title',
-             'title' => 'Title',
+             'name' => 'name',
+             'title' => 'Name',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => false,
+             'locked' => NULL,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
@@ -102,85 +99,34 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'defaultValueGenerator' => '',
           )),
           1 => 
-          Pimcore\Model\DataObject\ClassDefinition\Data\Block::__set_state(array(
-             'fieldtype' => 'block',
-             'lazyLoading' => false,
-             'disallowAddRemove' => false,
-             'disallowReorder' => false,
-             'collapsible' => false,
-             'collapsed' => false,
-             'maxItems' => NULL,
-             'styleElement' => '',
-             'childs' => 
-            array (
-              0 => 
-              Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
-                 'fieldtype' => 'checkbox',
-                 'defaultValue' => NULL,
-                 'name' => 'isDone',
-                 'title' => 'Is Done',
-                 'tooltip' => '',
-                 'mandatory' => false,
-                 'noteditable' => false,
-                 'index' => false,
-                 'locked' => false,
-                 'style' => '',
-                 'permissions' => NULL,
-                 'datatype' => 'data',
-                 'relationType' => false,
-                 'invisible' => false,
-                 'visibleGridView' => false,
-                 'visibleSearch' => false,
-                 'blockedVarsForExport' => 
-                array (
-                ),
-                 'defaultValueGenerator' => '',
-              )),
-              1 => 
-              Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
-                 'fieldtype' => 'input',
-                 'width' => '',
-                 'defaultValue' => NULL,
-                 'columnLength' => 190,
-                 'regex' => '',
-                 'unique' => false,
-                 'showCharCount' => false,
-                 'name' => 'task',
-                 'title' => 'Task',
-                 'tooltip' => '',
-                 'mandatory' => false,
-                 'noteditable' => false,
-                 'index' => false,
-                 'locked' => false,
-                 'style' => '',
-                 'permissions' => NULL,
-                 'datatype' => 'data',
-                 'relationType' => false,
-                 'invisible' => false,
-                 'visibleGridView' => false,
-                 'visibleSearch' => false,
-                 'blockedVarsForExport' => 
-                array (
-                ),
-                 'defaultValueGenerator' => '',
-              )),
-            ),
-             'layout' => NULL,
-             'referencedFields' => 
+          Pimcore\Model\DataObject\ClassDefinition\Data\ManyToOneRelation::__set_state(array(
+             'fieldtype' => 'manyToOneRelation',
+             'width' => '',
+             'assetUploadPath' => '',
+             'relationType' => true,
+             'objectsAllowed' => false,
+             'assetsAllowed' => false,
+             'assetTypes' => 
             array (
             ),
-             'fieldDefinitionsCache' => NULL,
-             'name' => 'Todolist',
-             'title' => 'Todolist',
+             'documentsAllowed' => false,
+             'documentTypes' => 
+            array (
+            ),
+             'classes' => 
+            array (
+            ),
+             'pathFormatterClass' => '',
+             'name' => 'related_dummy',
+             'title' => 'Related _dummy',
              'tooltip' => '',
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => false,
+             'locked' => NULL,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
-             'relationType' => false,
              'invisible' => false,
              'visibleGridView' => false,
              'visibleSearch' => false,
@@ -210,8 +156,8 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'previewUrl' => '',
    'group' => '',
    'showAppLoggerTab' => false,
-   'linkGeneratorReference' => 'App\\ProductLinkGenerator',
-   'previewGeneratorReference' => 'App\\Provider\\TestProvider',
+   'linkGeneratorReference' => '',
+   'previewGeneratorReference' => '',
    'compositeIndices' => 
   array (
   ),

@@ -8,10 +8,31 @@ class DefaultControllerTest extends WebTestCase
 {
     public function testIndex()
     {
-        $client = static::createClient();
 
-        $crawler = $client->request('GET', '/');
+        $expected = "geeks";
+        $actual = "Geeks";
 
-        $this->assertContains('Hello World', $client->getResponse()->getContent());
+        // Assert function to test whether expected
+        // value is equal to actual or not
+        $this->assertEquals(
+            $expected,
+            $actual,
+            "actual value is not equals to expected"
+        );
+    }
+
+    public function testEgal()
+    {
+
+        $expected = "geeks";
+        $actual = "Geeks";
+
+        // Assert function to test whether expected
+        // value is equal to actual or not
+        $this->assertEquals(
+            1,
+            1,
+            "ce sont les mememes"
+        );
     }
 }

@@ -1,0 +1,1 @@
+{"version":1,"defects":{"Tests\\Foo::testSomething":4,"Tests\\Foo::testLoadFixture":5},"times":{"Tests\\Foo::testSomething":1.487,"Tests\\Foo::testFoo":0.003,"Tests\\Foo::testLoadFixture":0.051}}
