@@ -39,6 +39,7 @@ class MyFacebookAuthenticator extends SocialAuthenticator
         // if (!$this->supports($request)) {
         //     return null;
         // }
+
             $credential =  $this->fetchAccessToken($this->getFacebookClient());
         return $credential;
     }

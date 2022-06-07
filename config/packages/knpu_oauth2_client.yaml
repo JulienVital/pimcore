@@ -9,6 +9,7 @@ knpu_oauth2_client:
             client_secret: 'QxV8Q~5tD~QWZmgpXismLYjvpGrvUu2wdl7wvaZ7'
             # the route that you're redirected to after
             # see the controller example below
+            scope: [openid]
             redirect_route: connect_facebook_check
             default_end_point_version: '2.0'
             use_state: false
