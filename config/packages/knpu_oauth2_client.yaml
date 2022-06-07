@@ -1,0 +1,14 @@
+knpu_oauth2_client:
+    clients:
+        # the key "facebook_main" can be anything, it
+        # will create a service: "knpu.oauth2.client.facebook_main"
+        facebook_main:
+            # this will be one of the supported types
+            type: azure
+            client_id: 'fe94d67e-78cd-4690-ba1d-49a77e2c51c0'
+            client_secret: 'QxV8Q~5tD~QWZmgpXismLYjvpGrvUu2wdl7wvaZ7'
+            # the route that you're redirected to after
+            # see the controller example below
+            redirect_route: connect_facebook_check
+            default_end_point_version: '2.0'
+            use_state: false

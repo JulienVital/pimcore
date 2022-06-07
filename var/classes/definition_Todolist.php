@@ -1,25 +1,12 @@
 <?php
 
-/**
-* Inheritance: yes
-* Variants: no
-* simple Todolist
-
-
-Fields Summary:
-- Title [input]
-- Todolist [block]
--- isDone [checkbox]
--- task [input]
-*/
-
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'id' => '3',
    'name' => 'Todolist',
    'description' => 'simple Todolist',
    'creationDate' => 0,
-   'modificationDate' => 1646776192,
+   'modificationDate' => 1653239935,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -53,7 +40,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'bodyStyle' => NULL,
      'datatype' => 'layout',
      'permissions' => NULL,
-     'childs' => 
+     'children' => 
     array (
       0 => 
       Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
@@ -71,7 +58,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'bodyStyle' => '',
          'datatype' => 'layout',
          'permissions' => NULL,
-         'childs' => 
+         'children' => 
         array (
           0 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
@@ -80,6 +67,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'defaultValue' => NULL,
              'columnLength' => 190,
              'regex' => '',
+             'regexFlags' => 
+            array (
+            ),
              'unique' => false,
              'showCharCount' => false,
              'name' => 'Title',
@@ -111,7 +101,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'collapsed' => false,
              'maxItems' => NULL,
              'styleElement' => '',
-             'childs' => 
+             'children' => 
             array (
               0 => 
               Pimcore\Model\DataObject\ClassDefinition\Data\Checkbox::__set_state(array(
@@ -143,6 +133,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
                  'defaultValue' => NULL,
                  'columnLength' => 190,
                  'regex' => '',
+                 'regexFlags' => 
+                array (
+                ),
                  'unique' => false,
                  'showCharCount' => false,
                  'name' => 'task',
@@ -241,6 +234,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'enableGridLocking' => false,
    'dao' => NULL,
    'blockedVarsForExport' => 
+  array (
+  ),
+   'activeDispatchingEvents' => 
   array (
   ),
 ));

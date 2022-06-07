@@ -1,22 +1,14 @@
 <?php
 
-/**
-* Inheritance: no
-* Variants: no
-
-
-Fields Summary:
-*/
-
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'id' => '5',
    'name' => 'test',
    'description' => '',
-   'creationDate' => NULL,
-   'modificationDate' => 1646436103,
+   'creationDate' => 0,
+   'modificationDate' => 1653239935,
    'userOwner' => 2,
-   'userModification' => NULL,
+   'userModification' => 0,
    'parentClass' => '',
    'implementsInterfaces' => NULL,
    'listingParentClass' => '',
@@ -66,6 +58,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'enableGridLocking' => false,
    'dao' => NULL,
    'blockedVarsForExport' => 
+  array (
+  ),
+   'activeDispatchingEvents' => 
   array (
   ),
 ));

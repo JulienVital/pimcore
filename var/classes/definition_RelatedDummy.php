@@ -1,21 +1,12 @@
 <?php
 
-/**
-* Inheritance: no
-* Variants: no
-
-
-Fields Summary:
-- name [input]
-*/
-
 
 return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'id' => '8',
    'name' => 'RelatedDummy',
    'description' => '',
    'creationDate' => 0,
-   'modificationDate' => 1652393215,
+   'modificationDate' => 1653239935,
    'userOwner' => 2,
    'userModification' => 2,
    'parentClass' => '',
@@ -49,7 +40,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
      'bodyStyle' => NULL,
      'datatype' => 'layout',
      'permissions' => NULL,
-     'childs' => 
+     'children' => 
     array (
       0 => 
       Pimcore\Model\DataObject\ClassDefinition\Layout\Panel::__set_state(array(
@@ -67,7 +58,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
          'bodyStyle' => '',
          'datatype' => 'layout',
          'permissions' => NULL,
-         'childs' => 
+         'children' => 
         array (
           0 => 
           Pimcore\Model\DataObject\ClassDefinition\Data\Input::__set_state(array(
@@ -76,6 +67,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'defaultValue' => NULL,
              'columnLength' => 190,
              'regex' => '',
+             'regexFlags' => 
+            array (
+            ),
              'unique' => false,
              'showCharCount' => false,
              'name' => 'name',
@@ -84,7 +78,7 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
              'mandatory' => false,
              'noteditable' => false,
              'index' => false,
-             'locked' => NULL,
+             'locked' => false,
              'style' => '',
              'permissions' => NULL,
              'datatype' => 'data',
@@ -150,6 +144,9 @@ return Pimcore\Model\DataObject\ClassDefinition::__set_state(array(
    'enableGridLocking' => false,
    'dao' => NULL,
    'blockedVarsForExport' => 
+  array (
+  ),
+   'activeDispatchingEvents' => 
   array (
   ),
 ));

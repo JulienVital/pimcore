@@ -15,6 +15,7 @@
 
 namespace App;
 
+use KnpU\OAuth2ClientBundle\KnpUOAuth2ClientBundle;
 use Pimcore\HttpKernel\BundleCollection\BundleCollection;
 use Pimcore\Kernel as PimcoreKernel;
 
@@ -28,8 +29,7 @@ class Kernel extends PimcoreKernel
      */
     public function registerBundlesToCollection(BundleCollection $collection)
     {
-        if (class_exists('\\AppBundle\\AppBundle')) {
-            $collection->addBundle(new \AppBundle\AppBundle);
-        }
+        $collection->addBundle(new KnpUOAuth2ClientBundle());
+
     }
 }

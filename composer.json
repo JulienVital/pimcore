@@ -9,10 +9,12 @@
   },
   "require": {
     "iio/libmergepdf": "^4.0",
+    "knpuniversity/oauth2-client-bundle": "^2.10",
     "pimcore/bundle-generator": "^1.0",
     "pimcore/pimcore": "^10.0",
     "setasign/fpdi": "^2.3",
-    "spiritix/php-chrome-html2pdf": "^1.6"
+    "spiritix/php-chrome-html2pdf": "^1.6",
+    "thenetworg/oauth2-azure": "^2.0"
   },
   "require-dev": {
     "cache/integration-tests": "^0.17.0",
@@ -22,7 +24,7 @@
     "nelmio/alice": "^3.10",
     "sempro/phpunit-pretty-print": "^1.4",
     "squizlabs/php_codesniffer": "*",
-    "symfony/maker-bundle": "^1.42",
+    "symfony/maker-bundle": "^1.43",
     "symfony/phpunit-bridge": "*"
   },
   "suggest": {

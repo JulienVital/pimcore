@@ -48,7 +48,10 @@ services:
         resource: '../src/Controller'
         public: true
         tags: [ 'controller.service_arguments' ]
-
+    App\Security\:
+        resource: '../src/Security'
+        public: true
+        tags: [ 'Security.service_arguments' ]
 
     #
     # COMMANDS
@@ -72,3 +75,4 @@ services:
     # App\EventListener\TestListener:
     #     tags:
     #         - { name: kernel.event_listener, event: pimcore.dataobject.preUpdate, method: onObjectPreUpdate }
+    App\EventListener\AuthenticationLogoutListener: ~

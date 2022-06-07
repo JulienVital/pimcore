@@ -1,9 +1,12 @@
 security:
+
     providers:
         pimcore_admin:
             id: Pimcore\Bundle\AdminBundle\Security\User\UserProvider
 
     firewalls:
+    # app/config/packages/security.yaml
+        # ...
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
@@ -27,8 +30,9 @@ security:
                 target: /admin/login
                 success_handler: Pimcore\Bundle\AdminBundle\Security\LogoutSuccessHandler
             guard:
-                entry_point: Pimcore\Bundle\AdminBundle\Security\Guard\AdminAuthenticator
+                entry_point: App\Security\MyFacebookAuthenticator
                 authenticators:
+                    - App\Security\MyFacebookAuthenticator
                     - Pimcore\Bundle\AdminBundle\Security\Guard\AdminAuthenticator
             two_factor:
                 auth_form_path: /admin/login/2fa                   # Path or route name of the two-factor form
