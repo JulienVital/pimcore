@@ -1,6 +1,8 @@
 imports:
     - { resource: 'local/' }
 
+parameters:
+    APIKEY: '%env(APIKEY)%'
 
 pimcore:
     bundles:
@@ -117,6 +119,8 @@ pimcore:
 
 #### SYMFONY OVERRIDES
 framework:
+    session:
+        cookie_samesite: 'lax'
 
 #### DEFINE LOCATION OF MANIFEST WHEN WORKING WITH SYMFONY ENCORE
 #    assets:

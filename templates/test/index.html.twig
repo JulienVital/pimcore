@@ -6,15 +6,85 @@
 <style>
     .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+
+    #embed{
+    width: 100%;
+    height: 100vh;
+    display: none;
+
+    }
 </style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.2.228/pdf.min.js"></script>
 
+<script>
+
+const fetchThisDocument = () => {
+    request =  fetch('/pdf/convert');
+    request.then(
+  function(response) {
+    return response.json();
+  }
+)
+
+.then(
+  // Celle-ci étant chaînée à la précédente, elle recevra en argument la réponse
+  // précédemment convertie en objet JS.
+  function(jsonResponse) {
+    // Désormais, on a accès aux données facilement et on peut travailler avec :
+    console.log(jsonResponse);
+    id=jsonResponse.id;
+    // TODO, utiliser ces données pour modifier la page, afficher les données, etc.
+  }
+)
+}
+var id=null;
+
+const status = () => {
+    request =  fetch('/pdf/status/'+id);
+    request.then(
+  function(response) {
+    return response.json();
+  }
+)
+
+.then(
+  // Celle-ci étant chaînée à la précédente, elle recevra en argument la réponse
+  // précédemment convertie en objet JS.
+  function(jsonResponse) {
+    // Désormais, on a accès aux données facilement et on peut travailler avec :
+    console.log(jsonResponse);
+ 
+
+    document.getElementById('progress').value = jsonResponse.progress;
+    document.getElementById('progressValue').textContent = jsonResponse.progress;
+    // TODO, utiliser ces données pour modifier la page, afficher les données, etc.
+  }
+)
+}
+
+const download = () => {
+
+ document.getElementById('embed').setAttribute("src","/web/viewer.html?file=/pdf/getDocument/"+id);
+ document.getElementById('embed').style.display = "block";
+
+}
+document.addEventListener("DOMContentLoaded", ()=>{
+
+    document.getElementById('convert').addEventListener("click", fetchThisDocument);
+    document.getElementById('status').addEventListener("click", status);
+    document.getElementById('download').addEventListener("click", download);
+});
+</script>
 <div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<a id='convert' href=#>Convert</a>
+<a id='status' href=#>Status</a>
+<a id='download' href=#>download</a>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/julien/pimcore/src/Controller/TestController.php'|file_link(0) }}">src/Controller/TestController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/julien/pimcore/templates/test/index.html.twig'|file_link(0) }}">templates/test/index.html.twig</a></code></li>
-    </ul>
+<progress id='progress' class="progressBars" value="0" max = "100"></progress>
+<h2 id="progressValue"></h2>
+<iframe id="embed"title="PDF" src="" style="
+    width: 100%;
+    height: 100vh;
+"></iframe>
 </div>
 {% endblock %}

@@ -1,12 +1,12 @@
 security:
-
     providers:
         pimcore_admin:
             id: Pimcore\Bundle\AdminBundle\Security\User\UserProvider
 
+
+
+
     firewalls:
-    # app/config/packages/security.yaml
-        # ...
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
@@ -23,7 +23,7 @@ security:
             pattern: ^/admin(/.*)?$
             # admin firewall is stateless as we open the admin
             # session on demand for non-blocking parallel requests
-            stateless: true
+            stateless: false
             provider: pimcore_admin
             logout:
                 path:   /admin/logout
@@ -43,6 +43,8 @@ security:
                 trusted_parameter_name: _trusted       # Name of the parameter for the trusted device option
                 multi_factor: false                    # If ALL active two-factor methods need to be fulfilled (multi-factor authentication)
 
+        # demo_frontend firewall is valid for the whole site
+        
 
     access_control:
         # Pimcore admin ACl  // DO NOT CHANGE!

@@ -7,11 +7,17 @@ use KnpU\OAuth2ClientBundle\Client\Provider\AzureClient;
 use League\OAuth2\Client\Provider\Exception\IdentityProviderException;
 use Pimcore\Bundle\AdminBundle\Security\Guard\AdminAuthenticator;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Cookie;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\RouterInterface;
 
 class AuthenticateController extends AbstractController
 {
+    public function __construct (RouterInterface $router){
+        $this->router = $router;
+    }
     /**
      * Link to this controller to start the "connect" process
      *
@@ -19,6 +25,7 @@ class AuthenticateController extends AbstractController
      */
     public function connectAction(ClientRegistry $clientRegistry)
     {
+
         // on Symfony 3.3 or lower, $clientRegistry = $this->get('knpu.oauth2.registry');
         // will redirect to Facebook!
         return $clientRegistry
@@ -36,11 +43,10 @@ class AuthenticateController extends AbstractController
     {
 
 
-
     }
 
-    public function login (){
-        return $this->render('@AdminBundle/Resources/views/Admin/Login/login.html.twig');
-    }
+    // public function login (){
+    //     return $this->render('@AdminBundle/Resources/views/Admin/Login/login.html.twig');
+    // }
 
 }
